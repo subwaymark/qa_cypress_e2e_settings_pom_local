@@ -91,7 +91,7 @@ class HomePageObject extends PageObject {
         case key === 'userLink':
           cy.get('nav a [alt]').closest('a')
             .then((link) => {
-              link[0].setAttributes('data-cy', 'profile-link');
+              link[0].setAttribute('data-cy', 'profile-link');
               HomePageObject.marks.userLink = true;
             });
 
@@ -103,6 +103,8 @@ class HomePageObject extends PageObject {
               link[0].setAttribute('data-cy', 'nav-signUp-link');
               HomePageObject.marks.signUpLink = true;
             });
+
+          break;
         case key === 'signInLink':
           cy.get('a')
             .contains('Sign in')
@@ -110,6 +112,8 @@ class HomePageObject extends PageObject {
               link[0].setAttribute('data-cy', 'nav-signIn-link');
               HomePageObject.marks.signInLink = true;
             });
+
+          break;
       } 
     }
   }

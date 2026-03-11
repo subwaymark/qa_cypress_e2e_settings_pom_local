@@ -1,5 +1,4 @@
 //signInPageObject
-import user from './userObject.js';
 import PageObject from '../PageObject.js';
 
 class SignInPageObject extends PageObject {
@@ -38,18 +37,18 @@ class SignInPageObject extends PageObject {
       .should('equal', '/');
   }
 
-  logInByAPI(email, password) {
-    cy.visit({
-      url: `http://localhost:3000/#/`,
-      method: 'POST',
-      body: {
-        user: {
-          email,
-          password
-        }
-      }
-    });
-  }
+  // logInByAPI(email, password) {
+  //   cy.visit({
+  //     url: `http://localhost:3000/#/`,
+  //     method: 'POST',
+  //     body: {
+  //       user: {
+  //         email,
+  //         password
+  //       }
+  //     }
+  //   });
+  // }
 }
 
 export default SignInPageObject;

@@ -1,5 +1,4 @@
 //SettingPageObject
-import { extend } from 'slug';
 import PageObject from '../PageObject.js';
 import HomeObject from './home.pageObject.js';
 
@@ -136,21 +135,21 @@ class SettingPageObject extends PageObject {
 
 }
 
-const homeObjPrototype = HomeObject.prototype;
+// const homeObjPrototype = HomeObject.prototype;
 
-SettingPageObject.prototype.homeMixIn = {
-  'getLogo': homeObjPrototype.clickLogo
-    .bind(homeObjPrototype),
-  'getHomeLink': homeObjPrototype.clickHomeLink
-    .bind(homeObjPrototype),
-  'getNewArticleLink': homeObjPrototype.clickNewArticleLink
-    .bind(homeObjPrototype),
-  'getSettingsLink': homeObjPrototype.clickSettingsLink
-    .bind(homeObjPrototype),
-  'getUserLink': homeObjPrototype.clickUserLink
-    .bind(homeObjPrototype),
-  'getCreateMarks': homeObjPrototype.createMarks
-    .bind(homeObjPrototype)
-};
+// SettingPageObject.prototype.homeMixIn = {
+//   'getLogo': homeObjPrototype.clickLogo
+//     .bind(homeObjPrototype),
+//   'getHomeLink': homeObjPrototype.clickHomeLink
+//     .bind(homeObjPrototype),
+//   'getNewArticleLink': homeObjPrototype.clickNewArticleLink
+//     .bind(homeObjPrototype),
+//   'getSettingsLink': homeObjPrototype.clickSettingsLink
+//     .bind(homeObjPrototype),
+//   'getUserLink': homeObjPrototype.clickUserLink
+//     .bind(homeObjPrototype),
+//   'getCreateMarks': homeObjPrototype.createMarks
+//     .bind(homeObjPrototype)
+// };
 
 export default SettingPageObject;

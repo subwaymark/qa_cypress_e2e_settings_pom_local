@@ -1,7 +1,6 @@
 //userObject
 import { faker } from '@faker-js/faker';
 import * as customComands from '../customCommands.js';
-import '@faker-js/faker';
 
 const { returnRandom, stringTransformator, ArgumentError }
   = customComands;
@@ -143,9 +142,7 @@ class UserObj {
   ) {
 
     for (let arg of arguments) {
-      const isString = typeof arg === 'string';
-
-      if (!isString) {
+      if (arg !== undefined && typeof arg !== 'string') {
         throw new ArgumentError('All arguments must be String');
       }
     }

@@ -14,9 +14,9 @@ class SignUpPageObject extends PageObject {
   clearMarks() {
     SignUpPageObject.marks = {
       usernameMark: false,
-      emailMark: true,
-      passwordMark: true,
-      submitButtonMark: true
+      emailMark: false,
+      passwordMark: false,
+      submitButtonMark: false
     };
   }
 
@@ -40,7 +40,7 @@ class SignUpPageObject extends PageObject {
         case 'emailMark':
           cy.get('form input[placeholder^="Email"]')
             .then((field) => {
-              field[0].setAttribute('data-cy', 'email-sign-in');
+              field[0].setAttribute('data-cy', 'email-sign-up');
               SignUpPageObject.marks.emailMark = true;
             });
 
@@ -48,7 +48,7 @@ class SignUpPageObject extends PageObject {
         case 'passwordMark':
           cy.get('form input[placeholder^="Password"]')
             .then((field) => {
-              field[0].setAttribute('data-cy', 'password-sign-in');
+              field[0].setAttribute('data-cy', 'password-sign-up');
               SignUpPageObject.marks.passwordMark = true;
             });
 
@@ -57,7 +57,7 @@ class SignUpPageObject extends PageObject {
           cy.get('form button')
             .contains('Sign up')
             .then((button) => {
-              button[0].setAttribute('data-cy', 'sign-in-btn');
+              button[0].setAttribute('data-cy', 'sign-up-btn');
               SignUpPageObject.marks.submitButtonMark = true;
             });
           
@@ -71,15 +71,15 @@ class SignUpPageObject extends PageObject {
   }
 
   get emailField() {
-    return cy.getByDataCy('email-sign-in');
+    return cy.getByDataCy('email-sign-up');
   }
 
   get passwordField() {
-    return cy.getByDataCy('password-sign-in');
+    return cy.getByDataCy('password-sign-up');
   }
 
   get signUpButton() {
-    return cy.getByDataCy('sign-in-btn');
+    return cy.getByDataCy('sign-up-btn');
   }
 
   fillUsername(username) {

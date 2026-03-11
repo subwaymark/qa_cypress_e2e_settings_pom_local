@@ -212,7 +212,7 @@ function stringTransformator(
       throw new ArgumentError('"upperCase" must be greater than -1');
   }
 
-  const actualSpecialCharacters = stringToTransform.match(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g)?.length ?? 0;
+  const actualSpecialCharacters = stringToTransform.match(/[!"#$%&'()*+,\-./:;<=>?@[\]^_`{|}~]/g)?.length ?? 0;
   const actualDigits = stringToTransform.match(/\d/g)?.length ?? 0;
   const actualUpperCase = stringToTransform.match(/\p{Lu}/gu)?.length ?? 0;
   const actualLength = stringToTransform.length;

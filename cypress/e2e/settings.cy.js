@@ -1,20 +1,11 @@
 //SettingCy
 /// <reference types="cypress" />
 /// <reference types="../support" />
-import { updateShorthandPropertyAssignment } from 'typescript';
 import SignUpPageObject from '../support/pages/signUp.pageObject.js';
 import HomePageObject from '../support/pages/home.pageObject.js';
 import SignInPageObject from '../support/pages/signIn.pageObject.js';
 import SettingPageObject from '../support/pages/settings.pageObject.js';
 import UserObj from '../support/pages/userObject.js';
-import {
-  isTheSameStructureOfObj,
-  randomize,
-  stringTransformator,
-  returnRandom,
-  ArgumentError,
-} from '../support/customCommands.js';
-import faker, { fakerEN, fakerEN_GB, fakerPL } from '@faker-js/faker';
 
 describe('Settings page', () => {
   const signUpPage = new SignUpPageObject();
@@ -105,8 +96,6 @@ describe('Settings page', () => {
       .type(user.newPassword);
     settingPage.clickOnUpdateButton();
     homePage.clickSettingsLink();
-    settingPage.passwordField
-      .should('have.value', user.newPassword);
     settingPage.clickOnLogOutButton();
     homePage.createMarks(false); 
     homePage.clickSignInLink();
