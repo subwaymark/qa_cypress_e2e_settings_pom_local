@@ -1,4 +1,6 @@
-import PageObject from '../PageObject';
+//signInPageObject
+import user from './userObject.js';
+import PageObject from '../PageObject.js';
 
 class SignInPageObject extends PageObject {
   url = '/user/login';
@@ -25,6 +27,28 @@ class SignInPageObject extends PageObject {
 
   clickSignInBtn() {
     this.signInBtn.click();
+  }
+
+  logInByGUI(email, password) {
+    cy.visit(this.url);
+    this.typeEmail(email);
+    this.typePassword(password);
+    this.clickSignInBtn();
+    cy.location('pathname')
+      .should('equal', '/');
+  }
+
+  logInByAPI(email, password) {
+    cy.visit({
+      url: `http://localhost:3000/#/`,
+      method: 'POST',
+      body: {
+        user: {
+          email,
+          password
+        }
+      }
+    });
   }
 }
 
