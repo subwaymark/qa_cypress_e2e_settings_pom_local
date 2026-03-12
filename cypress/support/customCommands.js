@@ -33,7 +33,7 @@ function isTheSameStructureOfObj(
 
       keysFromPattern.forEach((keyPattern, i) => {       
         if (keyPattern !== keysFromTest[i]) {
-          throw new Error(`"ObjToTest" has at least one different name of key from "objPattern" (Correct: ${keyPattern} Inncorrect: ${keysFromTest[i]})`);
+          throw new Error(`"ObjToTest" has at least one different name of key from "objPattern" (Correct: ${keyPattern} Incorrect: ${keysFromTest[i]})`);
         } 
       });
     } else if ((actualPropertyType === '[object Object]' ||
@@ -51,7 +51,7 @@ function isTheSameStructureOfObj(
       case !(actualPropertyType === '[object Object]' ||
         actualPropertyType === '[object Array]'):
           if ((!onlyStructure) && (pattern !== test)) {
-            throw new Error(`"ObjToTest" has at least one different value of key from "objPattern" (Correct: ${pattern} Inncorect: ${test})`);
+            throw new Error(`"ObjToTest" has at least one different value of key from "objPattern" (Correct: ${pattern} Incorrect: ${test})`);
           }
           return;
       case actualPropertyType === '[object Object]':

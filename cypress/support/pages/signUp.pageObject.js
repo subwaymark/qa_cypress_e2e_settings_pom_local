@@ -139,7 +139,7 @@ class SignUpPageObject extends PageObject {
       case !isValidUsername && useDefaultInternalValidation:
         throw new ArgumentError('"username" must have 3-40 letters');
       case !isValidEmail && useDefaultInternalValidation:
-        throw new ArgumentError('"email" has probably inncorrect structure');
+        throw new ArgumentError('"email" has probably incorrect structure');
       case !isValidPassword && useDefaultInternalValidation:
         throw new ArgumentError('"password" must consist of at least; ' +
           '1 uppercase, 1 digit, 1 special character and must have from ' +
@@ -184,7 +184,7 @@ class SignUpPageObject extends PageObject {
       case !isValidUsername && useDefaultInternalValidation:
         throw new ArgumentError('"username" must have 3-40 letters');
       case !isValidEmail && useDefaultInternalValidation:
-        throw new ArgumentError('"email" has probably inncorrect structure');
+        throw new ArgumentError('"email" has probably incorrect structure');
       case !isValidPassword && useDefaultInternalValidation:
         throw new ArgumentError('"password" must consist of at least; ' +
           '1 uppercase, 1 digit, 1 special character and must have from ' +

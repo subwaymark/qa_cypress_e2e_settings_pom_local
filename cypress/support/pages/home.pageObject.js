@@ -19,10 +19,10 @@ class HomePageObject extends PageObject {
     HomePageObject.marks = { 
       logo: false,
       navBar: false,
-      homeLink: true,
-      newArticleLink: true,
+      homeLink: false,
+      newArticleLink: false,
       settingsLink: false,
-      userLink: true,
+      userLink: false,
       signUpLink: false,
       signInLink: false
     };
